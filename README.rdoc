@@ -42,11 +42,12 @@ To autocompile/autorun all tests every time code changes
 
 To compile and run tests if code has changed since the last run
 
-  % rake
+  % rake auto:test
 
 To compile and run all tests even if nothing has changed since the last time
   
-  % rake test_all
+  % rake auto:test:all
+  
   
 
 == REQUIREMENTS:

@@ -2,7 +2,7 @@
 module IphoneTestify
   GEMDIR = File.expand_path(File.dirname(__FILE__) + "/..")
   # :stopdoc:
-  VERSION = '0.0.6'
+  VERSION = '0.0.7'
   LIBPATH = ::File.expand_path(::File.dirname(__FILE__)) + ::File::SEPARATOR
   PATH = ::File.dirname(LIBPATH) + ::File::SEPARATOR
   # :startdoc:

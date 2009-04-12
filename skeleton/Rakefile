@@ -1,1 +1,1 @@
-Load 'Autotest.rake'
+load 'Autotest.rake'

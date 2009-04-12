@@ -1,3 +1,7 @@
+IPHONE_SDK_VERSION = '2.2.1' unless Object::const_defined?("IPHONE_SDK_VERSION") 
+
+puts "SDK Version: #{IPHONE_SDK_VERSION}"
+
 
 BUILD_STATUS_FILE=".built"
 
@@ -48,7 +52,7 @@ end
 
 module AutoTest
   def self.test
-    output = `xcodebuild -target "Unit Test" -configuration Debug -sdk iphonesimulator2.1 2>&1`
+    output = `xcodebuild -target "Unit Test" -configuration Debug -sdk iphonesimulator#{IPHONE_SDK_VERSION} 2>&1`
     failure_line = nil
     output.each do |line|
       if line =~ /error:|^Executed.*(\d+) failures|Undefined symbols|PurpleSystemEventPort|FAILED|Segmentation fault/

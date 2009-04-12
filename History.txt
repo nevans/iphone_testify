@@ -8,3 +8,10 @@
 
 * Adding growl pass/fail images for autotesting
 * Adding UnitTests directory as part of skeleton
+
+== 0.0.7
+
+* added .gitignore
+* detects more failure conditions in growl message: segmentation faults, more build errors
+* moved bulk of Rake into separate file
+* changed tasks to auto:test, an auto:test:all
