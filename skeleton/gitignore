@@ -1,0 +1,20 @@
+.built
+*tm_build_errors
+# xcode noise
+
+iphone/build/*
+*.pbxuser
+*.mode2v3
+*.mode1v3
+*.perspective
+*.perspectivev3
+
+
+# osx noise
+.DS_Store
+profile
+
+
+*.swp
+*~.nib
+
