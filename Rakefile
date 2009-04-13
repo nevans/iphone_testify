@@ -24,7 +24,7 @@ PROJ.email = 'paul.wilson@merecomplexities.com'
 PROJ.url = 'http://github.com/paulanthonywilson/iphone_testify/'
 PROJ.version = IphoneTestify::VERSION
 
-PROJ.exclude << '\.gitignore'
+PROJ.exclude += ['\.gitignore', '\.DS_Store', '\.gem']
 PROJ.notes.exclude = %w(^README\.txt$ ^data/)
 PROJ.readme_file = 'README.rdoc'
 
