@@ -15,3 +15,7 @@
 * detects more failure conditions in growl message: segmentation faults, more build errors
 * moved bulk of Rake into separate file
 * changed tasks to auto:test, an auto:test:all
+
+== 0.1.10
+
+* ./autoiphonetest.rb no longer goes through rake
