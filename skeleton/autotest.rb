@@ -1,3 +1,4 @@
+SIMULATOR_VERSION = "2.2"
 class String
   attr_accessor :colour
   RESET="\e[00;m"
@@ -33,9 +34,9 @@ module AutoTest
     notice    
   end
   
-  def self.test
+  def self.run_test
     puts "Build: #{Time::now}"
-    output = `xcodebuild -target "Unit Test" -configuration Debug -sdk iphonesimulator2.1 2>&1`
+    output = `xcodebuild -target "Unit Test" -configuration Debug -sdk iphonesimulator#{SIMULATOR_VERSION} 2>&1`
     failure_line = nil
     output.each do |line|
       if line =~ /error:|^Executed.*(\d+) failures|Undefined symbols|PurpleSystemEventPort|FAILED|Segmentation fault/
@@ -49,6 +50,22 @@ module AutoTest
       print line.coloured unless line =~/Merge mismatch|setenv/
     end
     failure_line
+  end
+  
+  def self.unable_to_run_test
+    "Unable to run tests as the simulator is already running"
+  end
+  
+  def self.simulator_running?
+    !`ps -AO command`.split("\n").grep(/iPhoneSimulator.platform\/Developer\/Applications\/iPhone Simulator\.app/).empty?
+  end
+  
+  def self.test
+    if simulator_running?
+      unable_to_run_test
+    else
+      run_test
+    end
   end
 
   def self.growl title, msg =""
