@@ -1,4 +1,4 @@
-SIMULATOR_VERSION = "2.2"
+SIMULATOR_VERSION = "3.0"
 class String
   attr_accessor :colour
   RESET="\e[00;m"
